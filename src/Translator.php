@@ -575,6 +575,7 @@ HTML;
      */
     public function trans($id, array $parameters = array(), $locale = null, $domain = 'messages', $useDB = null)
     {
+        $locale = session('locale', $locale); // In case we have locale in session
         return $this->get($id, $parameters, $locale, true, $useDB);
     }
 
